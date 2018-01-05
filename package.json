@@ -1,0 +1,29 @@
+{
+  "name": "forecast",
+  "version": "1.0.0",
+  "description": "Forecast sales data using several statistical methods.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rokszinrokko/forecast.git"
+  },
+  "author": "Rokszin Rokkó",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/rokszinrokko/forecast/issues"
+  },
+  "homepage": "https://github.com/rokszinrokko/forecast#readme",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "webpack": "^3.10.0"
+  }
+}
