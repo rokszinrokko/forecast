@@ -77,6 +77,5 @@ export function getForecasts(series, m, precision) {
 // Optimal forecast
 export function getOptForecast(series, m, precision) {
   const forecasts = getForecasts(series, m, precision);
-  console.log(forecasts);
   return findMinSse(forecasts);
 }
