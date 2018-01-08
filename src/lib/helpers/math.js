@@ -29,7 +29,7 @@ export function findMinSse(arr) {
   return min;
 }
 
-// Optimal Holt-Winters forecast
+// Get optimal Holt-Winters forecast
 export function optHoltWinters(series, m, precision) {
   const combinations = [];
   for (let alpha = 0; alpha <= 1; alpha += 0.1 ** precision) {
