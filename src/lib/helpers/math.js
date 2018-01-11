@@ -43,7 +43,7 @@ export function optHoltWinters(series, m, precision) {
     for (let beta = 0; beta <= 1; beta += 0.1 ** precision) {
       for (let gamma = 0; gamma <= 1; gamma += 0.1 ** precision) {
         possiblePeriods.forEach((period) => {
-          const expSeries = holtWinters(series, alpha, beta, gamma, period, m);
+          const expSeries = holtWinters(series, alpha, beta, gamma, period, m) || [];
           combinations.push({
             expSeries,
             method: 'holt-winters',

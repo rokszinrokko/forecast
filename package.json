@@ -1,6 +1,6 @@
 {
   "name": "@rokszinrokko/forecast",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Forecast sales data using several statistical methods.",
   "main": "./dist/index.js",
   "scripts": {
