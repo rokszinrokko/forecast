@@ -1,4 +1,5 @@
 import holtWinters from 'nostradamus';
+// import optLinear from './optLinear';
 
 // Squared difference of two numbers
 export function squaredDiff(a, b) {
@@ -91,3 +92,4 @@ export function getOptForecast(series, m, precision) {
   const forecasts = getForecasts(series, m, precision);
   return findMinSse(forecasts);
 }
+
