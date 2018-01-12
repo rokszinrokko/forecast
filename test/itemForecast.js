@@ -54,7 +54,6 @@ describe('itemForecast', () => {
   });
   it('should return an object', () => {
     const result = itemForecast(bomba2, 3, 1);
-    console.log(result);
     assert.isObject(result);
   });
 });
