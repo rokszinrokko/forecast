@@ -9,12 +9,22 @@ const series = [100, 300, 623, 1452, 2941, 4765];
 const m = 3;
 
 const sample = {
-  expSeries: [176.39, 344.71, 673.64, 1316.45, 2572.66, 5027.6, 9825.12, 19200.61, 37522.55],
+  expSeries: [
+    175.82,
+    343.6,
+    671.47,
+    1312.22,
+    2564.39,
+    5011.43,
+    9793.52,
+    19138.86,
+    37401.88,
+  ],
   method: 'exponential',
-  sse: 233405.74390000026,
+  sse: 232100.25870000024,
 };
 
-describe('linear', () => {
+describe('exponential', () => {
   it('should be a function', () => {
     assert.isFunction(exponential);
   });

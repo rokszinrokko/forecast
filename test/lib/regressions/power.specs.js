@@ -14,7 +14,7 @@ const sample = {
   sse: 1010940.6232,
 };
 
-describe('linear', () => {
+describe('power', () => {
   it('should be a function', () => {
     assert.isFunction(power);
   });

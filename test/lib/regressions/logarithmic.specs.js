@@ -9,12 +9,24 @@ const series = [100, 453, 563, 623, 654, 693, 712, 765];
 const m = 3;
 
 const sample = {
-  expSeries: [176.39, 344.71, 673.64, 1316.45, 2572.66, 5027.6, 9825.12, 19200.61, 37522.55],
+  expSeries: [
+    180.71,
+    384.47,
+    503.66,
+    588.23,
+    653.82,
+    707.42,
+    752.73,
+    791.98,
+    826.61,
+    857.58,
+    885.6,
+  ],
   method: 'logarithmic',
-  sse: 233405.74390000026,
+  sse: 18535.475599999994,
 };
 
-describe('linear', () => {
+describe('logarithmic', () => {
   it('should be a function', () => {
     assert.isFunction(logarithmic);
   });
