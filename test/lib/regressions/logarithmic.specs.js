@@ -2,7 +2,7 @@ import {
   assert,
 } from 'chai';
 
-import logarithmic from '../../../src/lib/helpers/logarithmic';
+import logarithmic from '../../../src/lib/regressions/logarithmic';
 
 const series = [100, 453, 563, 623, 654, 693, 712, 765];
 

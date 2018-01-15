@@ -2,7 +2,7 @@ import {
   assert,
 } from 'chai';
 
-import exponential from '../../../src/lib/helpers/exponential';
+import exponential from '../../../src/lib/regressions/exponential';
 
 const series = [100, 300, 623, 1452, 2941, 4765];
 

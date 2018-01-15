@@ -2,7 +2,7 @@ import {
   assert,
 } from 'chai';
 
-import power from '../../../src/lib/helpers/power';
+import power from '../../../src/lib/regressions/power';
 
 const series = [100, 300, 623, 1452, 2941, 4765];
 

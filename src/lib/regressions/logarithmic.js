@@ -1,5 +1,5 @@
 import regression from 'regression';
-import { sse } from './index';
+import { sse } from '../helpers/index';
 
 export default function logarithmic(series, m) {
   const points = [];

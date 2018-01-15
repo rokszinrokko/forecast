@@ -2,7 +2,7 @@ import {
   assert,
 } from 'chai';
 
-import linear from '../../../src/lib/helpers/linear';
+import linear from '../../../src/lib/regressions/linear';
 
 const series = [100, 210, 280, 450, 500, 620];
 

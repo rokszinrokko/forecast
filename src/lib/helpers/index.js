@@ -1,5 +1,8 @@
 import holtWinters from 'nostradamus';
-// import optLinear from './optLinear';
+import exponential from '../regressions/exponential';
+import linear from '../regressions/linear';
+import logarithmic from '../regressions/logarithmic';
+import power from '../regressions/power';
 
 // Squared difference of two numbers
 export function squaredDiff(a, b) {
@@ -80,9 +83,11 @@ export function optHoltWinters(series, m, precision) {
 export function getForecasts(series, m, precision) {
   const forecasts = [];
 
-  // Holt-Winters
   forecasts.push(optHoltWinters(series, m, precision));
-  // TODO további előrejelzési módszerek
+  forecasts.push(exponential(series, m));
+  forecasts.push(linear(series, m));
+  forecasts.push(logarithmic(series, m));
+  forecasts.push(power(series, m));
 
   return forecasts;
 }
@@ -92,4 +97,3 @@ export function getOptForecast(series, m, precision) {
   const forecasts = getForecasts(series, m, precision);
   return findMinSse(forecasts);
 }
-

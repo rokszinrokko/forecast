@@ -1,5 +1,5 @@
 import regression from 'regression';
-import { sse } from './index';
+import { sse } from '../helpers/index';
 
 export default function linear(series, m) {
   const points = [];
