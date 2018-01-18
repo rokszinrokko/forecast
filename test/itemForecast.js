@@ -122,6 +122,18 @@ const powSample = {
   sse: 0,
 };
 
+const bomba = [
+  2957, 1802, 6996, 2795, 2815, 3306,
+  3727, 4158, 2325, 2544, 2513, 1350,
+  8157, 2978, 1515, 1761, 5210, 2987,
+  3023, 4316, 2846, 1151, 815, 1346,
+  1051, 3831, 1350, 1125, 1294, 1742,
+  1326, 1945, 1071, 2431, 973, 589,
+  410, 722, 1427, 1223, 1320, 1596,
+  1798, 1531, 1203, 1080, 678, 874,
+  452,
+];
+
 describe('itemForecast', () => {
   it('should be a function', () => {
     assert.isFunction(itemForecast);
@@ -177,5 +189,10 @@ describe('itemForecast', () => {
   it('should have values (power)', () => {
     const result = itemForecast(powData, 3, 1);
     assert.deepEqual(result, powSample);
+  });
+  // // Bomba
+  it('should return an object (bomba)', () => {
+    const result = itemForecast(bomba, 12, 1);
+    assert.isObject(result);
   });
 });

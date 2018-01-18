@@ -74,7 +74,9 @@ export function optHoltWinters(series, m, precision) {
     }
     return true;
   });
-  const result = findMinSse(filteredCombinations);
+  let result = {};
+
+  if (filteredCombinations.length) result = findMinSse(filteredCombinations);
 
   return result;
 }
@@ -83,7 +85,9 @@ export function optHoltWinters(series, m, precision) {
 export function getForecasts(series, m, precision) {
   const forecasts = [];
 
-  forecasts.push(optHoltWinters(series, m, precision));
+  const holtWintersResult = optHoltWinters(series, m, precision);
+  if (Object.keys(holtWintersResult).length) forecasts.push(holtWintersResult);
+
   forecasts.push(exponential(series, m));
   forecasts.push(linear(series, m));
   forecasts.push(logarithmic(series, m));
