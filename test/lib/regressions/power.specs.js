@@ -27,6 +27,7 @@ const sample = {
   expSeries: [79.13, 356.1, 858.41, 1602.55, 2600.79, 3863.04, 5397.64, 7211.85, 9312.1],
   method: 'power',
   sse: 1010940.6232,
+  r2: 0.94,
 };
 
 const sample2 = {
@@ -49,6 +50,7 @@ const sample2 = {
   ],
   method: 'power',
   sse: 0,
+  r2: 1,
 };
 
 describe('power', () => {

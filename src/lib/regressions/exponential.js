@@ -21,6 +21,7 @@ export default function exponential(series, m) {
     expSeries,
     method: 'exponential',
     sse: sse(series, expSeries),
+    r2: regression.exponential(points).r2,
   };
 
   return result;

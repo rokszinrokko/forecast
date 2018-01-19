@@ -21,6 +21,7 @@ export default function logarithmic(series, m) {
     expSeries,
     method: 'logarithmic',
     sse: sse(series, expSeries),
+    r2: regression.logarithmic(points).r2,
   };
 
   return result;

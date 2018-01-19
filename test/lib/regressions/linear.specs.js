@@ -12,6 +12,7 @@ const sample = {
   expSeries: [100, 204, 308, 412, 516, 620, 724, 828, 932],
   method: 'linear',
   sse: 2520,
+  r2: 0.99,
 };
 
 describe('linear', () => {

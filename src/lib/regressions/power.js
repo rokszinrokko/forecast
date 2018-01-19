@@ -21,6 +21,7 @@ export default function power(series, m) {
     expSeries,
     method: 'power',
     sse: sse(series, expSeries),
+    r2: regression.power(points).r2,
   };
 
   return result;

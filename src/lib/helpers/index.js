@@ -1,8 +1,16 @@
-import holtWinters from 'nostradamus';
+import optHoltWinters from '../regressions/optHoltWinters';
 import exponential from '../regressions/exponential';
 import linear from '../regressions/linear';
 import logarithmic from '../regressions/logarithmic';
 import power from '../regressions/power';
+
+export function mean(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i += 1) {
+    sum += arr[i];
+  }
+  return sum / arr.length;
+}
 
 // Squared difference of two numbers
 export function squaredDiff(a, b) {
@@ -23,6 +31,17 @@ export function sse(series, expSeries) {
   return squaredDiffs.reduce((a, b) => a + b, 0);
 }
 
+export function sst(series) {
+  const meanOfSeries = mean(series);
+  const squaredDiffs = [];
+
+  for (let i = 0; i < series.length; i += 1) {
+    squaredDiffs.push((series[i] - meanOfSeries) ** 2);
+  }
+
+  return squaredDiffs.reduce((a, b) => a + b, 0);
+}
+
 export function findMinSse(arr) {
   let min = arr[0];
 
@@ -33,52 +52,14 @@ export function findMinSse(arr) {
   return min;
 }
 
-// Get optimal Holt-Winters forecast
-export function optHoltWinters(series, m, precision) {
-  const possiblePeriods = [];
+export function findMaxR2(arr) {
+  let max = arr[0];
 
-  for (let i = 1; i <= series.length / 2; i += 1) {
-    if (series.length % i === 0) {
-      possiblePeriods.push(i);
-    }
+  for (let i = 1; i < arr.length; i += 1) {
+    const value = arr[i];
+    max = (value.r2 > max.r2) ? value : max;
   }
-  const combinations = [];
-  for (let alpha = 0; alpha <= 1; alpha += 0.1 ** precision) {
-    for (let beta = 0; beta <= 1; beta += 0.1 ** precision) {
-      for (let gamma = 0; gamma <= 1; gamma += 0.1 ** precision) {
-        possiblePeriods.forEach((period) => {
-          const expSeries = holtWinters(series, alpha, beta, gamma, period, m) || [];
-          combinations.push({
-            expSeries,
-            method: 'holt-winters',
-            params: {
-              alpha,
-              beta,
-              gamma,
-              period,
-            },
-            sse: sse(series, expSeries),
-          });
-        });
-      }
-    }
-  }
-
-  const filteredCombinations = combinations.filter((combination) => {
-    if (combination.expSeries.find(value => value < 0)) {
-      return false;
-    }
-    // eslint-disable-next-line
-    if (isNaN(combination.sse)) {
-      return false;
-    }
-    return true;
-  });
-  let result = {};
-
-  if (filteredCombinations.length) result = findMinSse(filteredCombinations);
-
-  return result;
+  return max;
 }
 
 // Get optimal forecasts for all methods
@@ -99,5 +80,5 @@ export function getForecasts(series, m, precision) {
 // Optimal forecast
 export function getOptForecast(series, m, precision) {
   const forecasts = getForecasts(series, m, precision);
-  return findMinSse(forecasts);
+  return findMaxR2(forecasts);
 }

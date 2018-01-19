@@ -21,6 +21,7 @@ export default function linear(series, m) {
     expSeries,
     method: 'linear',
     sse: sse(series, expSeries),
+    r2: regression.linear(points).r2,
   };
 
   return result;

@@ -22,6 +22,7 @@ const sample = {
   ],
   method: 'exponential',
   sse: 232100.25870000024,
+  r2: 0.99,
 };
 
 describe('exponential', () => {

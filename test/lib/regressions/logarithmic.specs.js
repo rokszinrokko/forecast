@@ -24,6 +24,7 @@ const sample = {
   ],
   method: 'logarithmic',
   sse: 18535.475599999994,
+  r2: 0.94,
 };
 
 describe('logarithmic', () => {
