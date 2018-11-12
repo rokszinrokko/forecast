@@ -2,9 +2,7 @@ import {
   assert,
 } from 'chai';
 
-import {
-  itemForecast,
-} from '../src/index';
+import forecast from '../src/index';
 
 // Linear
 
@@ -130,65 +128,65 @@ const bomba = [
   452,
 ];
 
-describe('itemForecast', () => {
+describe('forecast', () => {
   it('should be a function', () => {
-    assert.isFunction(itemForecast);
+    assert.isFunction(forecast);
   });
   // Linear
   it('should return an object (linear)', () => {
-    const result = itemForecast(linData, 3, 1);
+    const result = forecast(linData, 3, 1);
     assert.isObject(result);
   });
   it('should have keys (linear)', () => {
-    const result = itemForecast(linData, 3, 1);
+    const result = forecast(linData, 3, 1);
     assert.hasAllKeys(result, linSample);
   });
   it('should have values (linear)', () => {
-    const result = itemForecast(linData, 3, 1);
+    const result = forecast(linData, 3, 1);
     assert.deepEqual(result, linSample);
   });
   // Exponential
   it('should return an object (exponential)', () => {
-    const result = itemForecast(expData, 3, 1);
+    const result = forecast(expData, 3, 1);
     assert.isObject(result);
   });
   it('should have keys (exponential)', () => {
-    const result = itemForecast(expData, 3, 1);
+    const result = forecast(expData, 3, 1);
     assert.hasAllKeys(result, expSample);
   });
   it('should have values (exponential)', () => {
-    const result = itemForecast(expData, 3, 1);
+    const result = forecast(expData, 3, 1);
     assert.deepEqual(result, expSample);
   });
   // Logarithmic
   it('should return an object (logarithmic)', () => {
-    const result = itemForecast(logData, 3, 1);
+    const result = forecast(logData, 3, 1);
     assert.isObject(result);
   });
   it('should have keys (logarithmic)', () => {
-    const result = itemForecast(logData, 3, 1);
+    const result = forecast(logData, 3, 1);
     assert.hasAllKeys(result, logSample);
   });
   it('should have values (logarithmic)', () => {
-    const result = itemForecast(logData, 3, 1);
+    const result = forecast(logData, 3, 1);
     assert.deepEqual(result, logSample);
   });
   // Power
   it('should return an object (power)', () => {
-    const result = itemForecast(powData, 3, 1);
+    const result = forecast(powData, 3, 1);
     assert.isObject(result);
   });
   it('should have keys (power)', () => {
-    const result = itemForecast(powData, 3, 1);
+    const result = forecast(powData, 3, 1);
     assert.hasAllKeys(result, powSample);
   });
   it('should have values (power)', () => {
-    const result = itemForecast(powData, 3, 1);
+    const result = forecast(powData, 3, 1);
     assert.deepEqual(result, powSample);
   });
   // // Bomba
   it('should return an object (bomba)', () => {
-    const result = itemForecast(bomba, 12, 1);
+    const result = forecast(bomba, 12, 1);
     assert.isObject(result);
   });
 });

@@ -1,6 +1,14 @@
 import regression from 'regression';
 import { sse } from '../helpers/index';
 
+/**
+ * Returns exponential regression of a historical series
+ * @param {Array} series
+ * @param {number} m count of periods to forecast ahead
+ *
+ * @return {Forecast}
+ */
+
 export default function exponential(series, m) {
   const points = [];
   for (let i = 1; i < series.length + 1; i += 1) {
