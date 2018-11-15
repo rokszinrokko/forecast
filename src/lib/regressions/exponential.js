@@ -2,7 +2,7 @@ import regression from 'regression';
 import { sse } from '../helpers/index';
 
 /**
- * Returns exponential regression of a historical series
+ * Returns forecast using exponential regression
  * @param {Array} series
  * @param {number} m count of periods to forecast ahead
  *

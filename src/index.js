@@ -1,4 +1,5 @@
 import { getOptForecast } from './lib/helpers/index';
+import exponential from './lib/regressions/exponential';
 
 /**
  * @typedef {Object} Forecast
@@ -9,14 +10,19 @@ import { getOptForecast } from './lib/helpers/index';
  */
 
 /**
- * 
+ *
  * @param {Array} series input series data
  * @param {number} [m = 1] count of periods to forecast ahead
- * @param {number} [precision = 1] level of optimalization of alpha, beta and gamma parameters. Only applicable for HolWinters forecasts
- * 
+ * @param {number} [precision = 1] level of optimalization of alpha, beta and gamma parameters.
+ * Only applicable for HolWinters forecasts
+ *
  * @returns {Forecast}
  */
 
 export default function forecast(series, m = 1, precision = 1) {
   return getOptForecast(series, m, precision);
+}
+
+export function forecastExponential(series, m = 1, precision = 1) {
+  return exponential(series, m, precision);
 }

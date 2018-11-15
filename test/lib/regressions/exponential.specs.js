@@ -3,6 +3,8 @@ import {
 } from 'chai';
 
 import exponential from '../../../src/lib/regressions/exponential';
+import { forecastExponential } from '../../../src/index';
+
 
 const series = [100, 300, 623, 1452, 2941, 4765];
 
@@ -28,6 +30,9 @@ const sample = {
 describe('exponential', () => {
   it('should be a function', () => {
     assert.isFunction(exponential);
+  });
+  it('should be a function', () => {
+    assert.isFunction(forecastExponential);
   });
   it('should return an object', () => {
     const result = exponential(series, m);

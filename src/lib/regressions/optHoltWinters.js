@@ -1,5 +1,13 @@
 import holtWinters from 'nostradamus';
 
+/**
+ * Returns forecast using optimal Holt-Winters regression
+ * @param {Array} series
+ * @param {number} m count of periods to forecast ahead
+ *
+ * @return {Forecast}
+ */
+
 import {
   sse,
   sst,
